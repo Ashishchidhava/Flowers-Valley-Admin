@@ -14,4 +14,13 @@
     <string name="view_flower">View Flower</string>
     <string name="add_new_flower">Add New Flower</string>
     <string name="add_flower">Add Flower</string>
+
+    <string name="popular_items">Popular Items</string>
+    <string name="view_all">View All</string>
+    <string name="angle">Angle</string>
+    <string name="popular_flowers">Popular Flowers</string>
+    <string name="login">Login</string>
+    <string name="to_your_account">to Your Account</string>
+    <string name="mobile">Mobile</string>
+    <string name="verify">Verify</string>
 </resources>

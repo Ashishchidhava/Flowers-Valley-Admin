@@ -7,6 +7,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
+import com.example.flowervallyadmin.fragment.LoginFragment;
+import com.example.flowervallyadmin.fragment.MordernDashboardFragment;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -14,7 +17,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        replaceFragment(new DashBoardFragment());
+
+
+        replaceFragment(new LoginFragment());
     }
 
     void replaceFragment(Fragment fragment) {
