@@ -1,12 +1,16 @@
 package com.example.flowervallyadmin.fragment;
 
+import static android.provider.Settings.System.DATE_FORMAT;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +31,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.Executor;
 
 public class OTPVerificationFragment extends Fragment {
@@ -35,6 +41,8 @@ public class OTPVerificationFragment extends Fragment {
     private MaterialButton btnVerify;
     private TextInputEditText etOtp;
     private FirebaseAuth mAuth;
+    AppCompatTextView timer;
+    static int counter = 1;
 
     public OTPVerificationFragment() {
         // Required empty public constructor
@@ -57,7 +65,7 @@ public class OTPVerificationFragment extends Fragment {
 
         btnVerify = view.findViewById(R.id.btn_verify);
         etOtp = view.findViewById(R.id.otp);
-
+        timer = view.findViewById(R.id.timer);
         mAuth = FirebaseAuth.getInstance();
 
         btnVerify.setOnClickListener(new View.OnClickListener() {

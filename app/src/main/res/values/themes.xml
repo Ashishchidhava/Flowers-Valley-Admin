@@ -9,4 +9,14 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="MyTheme" parent="Theme.FlowerVallyAdmin">
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+    <style name="Theme.FlowerVallyAdmin.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.FlowerVallyAdmin.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.FlowerVallyAdmin.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

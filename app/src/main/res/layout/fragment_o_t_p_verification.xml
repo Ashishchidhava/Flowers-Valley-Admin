@@ -91,6 +91,37 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Resend OTP in "
+                    android:textColor="@color/green_200"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/timer"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="01:29"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_verify"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"

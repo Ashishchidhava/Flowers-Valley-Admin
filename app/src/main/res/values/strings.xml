@@ -23,4 +23,16 @@
     <string name="to_your_account">to Your Account</string>
     <string name="mobile">Mobile</string>
     <string name="verify">Verify</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="choose_file">Choose File</string>
+    <string name="enter_file_name">Enter file name</string>
+    <string name="upload">Upload</string>
 </resources>
