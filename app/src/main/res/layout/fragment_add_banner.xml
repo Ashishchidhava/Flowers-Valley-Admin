@@ -50,7 +50,7 @@
         android:layout_centerHorizontal="true"
         android:background="@color/colorPrimary"
         android:fontFamily="@font/poppins_medium"
-        android:text="@string/upload"
+        android:text="@string/banner"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="17sp" />

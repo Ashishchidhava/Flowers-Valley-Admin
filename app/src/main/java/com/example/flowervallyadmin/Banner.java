@@ -1,14 +1,14 @@
 package com.example.flowervallyadmin;
 
-public class Upload {
+public class Banner {
     private String mName;
     private String mImageUrl;
 
-    public Upload() {
+    public Banner() {
         //empty constructor needed
     }
 
-    public Upload(String name, String imageUrl) {
+    public Banner(String name, String imageUrl) {
         if (name.trim().equals("")) {
             name = "No Name";
         }

@@ -34,5 +34,5 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="choose_file">Choose File</string>
     <string name="enter_file_name">Enter file name</string>
-    <string name="upload">Upload</string>
+    <string name="banner">Upload</string>
 </resources>

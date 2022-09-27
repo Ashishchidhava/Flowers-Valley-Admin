@@ -22,9 +22,10 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.flowervallyadmin.R;
-import com.example.flowervallyadmin.Upload;
+import com.example.flowervallyadmin.Banner;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -125,18 +126,24 @@ public class AddBannerFragment extends Fragment {
                                 }
                             }, 500);
 
-                            Toast.makeText(getContext(), "Upload successful", Toast.LENGTH_LONG).show();
-                            Upload upload = new Upload(mEditTextFileName.getText().toString().trim(),
-                                    taskSnapshot.getMetadata().getReference().getDownloadUrl().toString());
 
+                            Toast.makeText(getContext(), "Upload successful", Toast.LENGTH_LONG).show();
+
+                            Task<Uri> urlTask = taskSnapshot.getStorage().getDownloadUrl();
+                            while (!urlTask.isSuccessful()) ;
+                            Uri downloadUrl = urlTask.getResult();
+
+                            Log.i(TAG, "onSuccess: " + downloadUrl);
+
+                            Banner banner = new Banner(mEditTextFileName.getText().toString().trim(), downloadUrl.toString());
                             String uploadId = mDatabaseRef.push().getKey();
-                            mDatabaseRef.child(uploadId).setValue(upload);
+                            mDatabaseRef.child(uploadId).setValue(banner);
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Log.e(TAG, "onFailure: ",e );
+                            Log.e(TAG, "onFailure: ", e);
                             Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     })
