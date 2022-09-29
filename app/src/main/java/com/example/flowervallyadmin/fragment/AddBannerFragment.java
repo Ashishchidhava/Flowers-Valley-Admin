@@ -22,7 +22,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.flowervallyadmin.R;
-import com.example.flowervallyadmin.Banner;
+import com.example.flowervallyadmin.model.Banner;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -135,8 +135,9 @@ public class AddBannerFragment extends Fragment {
 
                             Log.i(TAG, "onSuccess: " + downloadUrl);
 
-                            Banner banner = new Banner(mEditTextFileName.getText().toString().trim(), downloadUrl.toString());
+                            Banner banner = new Banner(mDatabaseRef.push().getKey(), mEditTextFileName.getText().toString().trim(), downloadUrl.toString());
                             String uploadId = mDatabaseRef.push().getKey();
+                            banner.setId(uploadId);
                             mDatabaseRef.child(uploadId).setValue(banner);
                         }
                     })

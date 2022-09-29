@@ -1,6 +1,7 @@
-package com.example.flowervallyadmin;
+package com.example.flowervallyadmin.model;
 
 public class Banner {
+    private String bannerId;
     private String mName;
     private String mImageUrl;
 
@@ -15,6 +16,24 @@ public class Banner {
 
         mName = name;
         mImageUrl = imageUrl;
+    }
+
+    public Banner(String bannerId, String name, String imageUrl) {
+        if (name.trim().equals("")) {
+            name = "No Name";
+        }
+
+        bannerId = bannerId;
+        mName = name;
+        mImageUrl = imageUrl;
+    }
+
+    public String getId() {
+        return bannerId;
+    }
+
+    public void setId(String id) {
+        this.bannerId = id;
     }
 
     public String getName() {
