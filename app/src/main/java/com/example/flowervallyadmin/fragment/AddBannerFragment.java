@@ -69,7 +69,6 @@ public class AddBannerFragment extends Fragment {
 
         mButtonChooseImage = view.findViewById(R.id.button_choose_image);
         mButtonUpload = view.findViewById(R.id.button_upload);
-        mTextViewShowUploads = view.findViewById(R.id.text_view_show_uploads);
         mEditTextFileName = view.findViewById(R.id.edit_text_file_name);
         mImageView = view.findViewById(R.id.image_view);
         mProgressBar = view.findViewById(R.id.progress_bar);
@@ -164,6 +163,6 @@ public class AddBannerFragment extends Fragment {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent, 101);
+        getActivity().startActivityForResult(intent, 101);
     }
 }
